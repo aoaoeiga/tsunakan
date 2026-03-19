@@ -14,7 +14,7 @@ export default function Page() {
 
   const heroStagger = 0.2;
   const heroBgTransition = useMemo(
-    () => ({ duration: 0.5, ease: easeOut }),
+    () => ({ duration: 0.5, ease: "easeOut" }),
     [],
   );
   const heroItemTransition = useMemo(
