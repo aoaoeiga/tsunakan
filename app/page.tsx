@@ -3,7 +3,6 @@
 import { motion, useInView } from "framer-motion";
 import { useMemo, useRef } from "react";
 
-const easeOut = [0.33, 1, 0.68, 1];
 const minDuration = 0.8;
 
 export default function Page() {
@@ -13,12 +12,8 @@ export default function Page() {
   const eventsCardInView = useInView(eventsCardRef, { once: true, amount: 0.2 });
 
   const heroStagger = 0.2;
-  const heroBgTransition = useMemo(
-    () => ({ duration: 0.5, ease: "easeOut" }),
-    [],
-  );
   const heroItemTransition = useMemo(
-    () => ({ duration: minDuration, ease: easeOut }),
+    () => ({ duration: minDuration, ease: "easeOut" }),
     [],
   );
 
@@ -80,7 +75,7 @@ export default function Page() {
       show: {
         opacity: 1,
         x: 0,
-        transition: { duration: minDuration, ease: easeOut },
+        transition: { duration: minDuration, ease: "easeOut" },
       },
     }),
     [],
@@ -93,7 +88,7 @@ export default function Page() {
         className="flex min-h-screen items-center justify-center px-6 md:px-12"
         initial={{ backgroundColor: "rgba(253,250,244,0)" }}
         animate={{ backgroundColor: "#FDFAF4" }}
-        transition={heroBgTransition}
+        transition={{ duration: 0.5 }}
       >
         <motion.div
           className="mx-auto w-full max-w-[960px] text-center"
@@ -192,11 +187,11 @@ export default function Page() {
                 ? { opacity: 1, y: 0 }
                 : { opacity: 0, y: 60 }
             }
-            transition={{ duration: minDuration, ease: easeOut }}
+            transition={{ duration: minDuration, ease: "easeOut" }}
             whileHover={{
               y: -8,
               boxShadow: "0 12px 40px rgba(0,0,0,0.08)",
-              transition: { duration: 0.25, ease: easeOut },
+              transition: { duration: 0.25, ease: "easeOut" },
             }}
           >
             <div className="mb-6 flex flex-wrap items-start justify-between gap-6">
