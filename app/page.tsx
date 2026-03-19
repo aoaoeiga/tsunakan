@@ -12,20 +12,11 @@ export default function Page() {
   const eventsCardInView = useInView(eventsCardRef, { once: true, amount: 0.2 });
 
   const heroStagger = 0.2;
-  const heroItemTransition = useMemo(
-    () => ({ duration: minDuration, ease: "easeOut" }),
-    [],
-  );
 
   const heroContainerVariants = useMemo(
     () => ({
       hidden: {},
-      show: {
-        transition: {
-          staggerChildren: heroStagger,
-          delayChildren: 0.1,
-        },
-      },
+      show: {},
     }),
     [],
   );
@@ -33,9 +24,9 @@ export default function Page() {
   const heroTagVariants = useMemo(
     () => ({
       hidden: { opacity: 0, y: 24 },
-      show: { opacity: 1, y: 0, transition: heroItemTransition },
+      show: { opacity: 1, y: 0 },
     }),
-    [heroItemTransition],
+    [],
   );
 
   const heroTitleLineVariants = useMemo(
@@ -45,26 +36,23 @@ export default function Page() {
         opacity: 1,
         y: 0,
         filter: "blur(0px)",
-        transition: heroItemTransition,
       },
     }),
-    [heroItemTransition],
+    [],
   );
 
   const heroSubVariants = useMemo(
     () => ({
       hidden: { opacity: 0, y: 24 },
-      show: { opacity: 1, y: 0, transition: heroItemTransition },
+      show: { opacity: 1, y: 0 },
     }),
-    [heroItemTransition],
+    [],
   );
 
   const statementContainerVariants = useMemo(
     () => ({
       hidden: {},
-      show: {
-        transition: { staggerChildren: 0.3, delayChildren: 0.05 },
-      },
+      show: {},
     }),
     [],
   );
@@ -72,11 +60,7 @@ export default function Page() {
   const statementItemVariants = useMemo(
     () => ({
       hidden: { opacity: 0, x: -48 },
-      show: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: minDuration, ease: "easeOut" },
-      },
+      show: { opacity: 1, x: 0 },
     }),
     [],
   );
@@ -95,9 +79,11 @@ export default function Page() {
           variants={heroContainerVariants}
           initial="hidden"
           animate="show"
+          transition={{ staggerChildren: heroStagger, delayChildren: 0.1 }}
         >
           <motion.p
             variants={heroTagVariants}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-10 font-sans text-[12px] tracking-[0.22em] text-[#FF6B35] md:text-[13px]"
           >
             京都発 · 留学生×日本人 · 6名限定ディナー
@@ -107,12 +93,14 @@ export default function Page() {
             <motion.span
               className="block"
               variants={heroTitleLineVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               あなたの隣に座るのは、まだ会ったことのない
             </motion.span>
             <motion.span
               className="block"
               variants={heroTitleLineVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               親友かもしれない。
             </motion.span>
@@ -120,6 +108,7 @@ export default function Page() {
 
           <motion.p
             variants={heroSubVariants}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="mx-auto mb-14 max-w-[820px] font-sans text-[16px] font-light leading-relaxed text-[#888888]"
           >
             繋がって、感動して、乾杯。
@@ -131,6 +120,8 @@ export default function Page() {
             className="inline-flex items-center justify-center rounded-[100px] bg-[#FF6B35] px-[40px] py-[16px] font-sans text-[16px] font-medium text-white"
             animate={{ scale: [1, 1.02, 1] }}
             transition={{
+              duration: 0.8,
+              ease: "easeOut",
               scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
             }}
           >
@@ -147,9 +138,11 @@ export default function Page() {
           variants={statementContainerVariants}
           initial="hidden"
           animate={statementInView ? "show" : "hidden"}
+          transition={{ staggerChildren: 0.3, delayChildren: 0.05 }}
         >
           <motion.div
             variants={statementItemVariants}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-6 font-serif text-[48px] leading-[1.15] text-white"
           >
             3年間、同じ人間としか話してないかも。
@@ -157,6 +150,7 @@ export default function Page() {
 
           <motion.div
             variants={statementItemVariants}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-10 font-sans text-[24px] font-light leading-relaxed text-[#888888]"
           >
             それって、もったいなくないか。
@@ -164,6 +158,7 @@ export default function Page() {
 
           <motion.div
             variants={statementItemVariants}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="font-serif text-[56px] leading-[1.15] text-[#FF6B35]"
           >
             ツナカンは、その壁を取り払う6人の夜。
