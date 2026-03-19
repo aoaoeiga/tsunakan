@@ -5,16 +5,13 @@ import "./globals.css";
 const notoSerifJP = Noto_Serif_JP({
   variable: "--font-noto-serif",
   subsets: ["latin"],
-  // Design spec: heading uses a very bold weight (font-black) and we also
-  // need lighter weights for possible variants.
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["200", "300", "400"],
 });
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans",
   subsets: ["latin"],
-  // Body uses "Light" (約300) in the design spec.
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["200", "300", "400"],
 });
 
 export const metadata: Metadata = {
