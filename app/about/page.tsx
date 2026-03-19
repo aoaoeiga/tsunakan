@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 export default function AboutPage() {
   const ref1 = useRef<HTMLDivElement>(null);
-  const ref2 = useRef<HTMLDivElement>(null);
+  const ref2 = useRef<HTMLQuoteElement>(null);
   const inView1 = useInView(ref1, { once: true, amount: 0.2 });
   const inView2 = useInView(ref2, { once: true, amount: 0.2 });
 
