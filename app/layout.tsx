@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Serif_JP, Noto_Sans_JP } from "next/font/google";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const notoSerifJP = Noto_Serif_JP({
@@ -27,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${notoSerifJP.variable} ${notoSansJP.variable} antialiased`}
+        className={`${notoSerifJP.variable} ${notoSansJP.variable} min-h-screen antialiased`}
       >
-        {children}
+        <Nav />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
