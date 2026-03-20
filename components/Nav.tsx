@@ -27,8 +27,8 @@ export default function Nav() {
           ツナカン.
         </Link>
 
-        {/* Desktop: center menu + CTA */}
-        <div className="hidden items-center gap-10 md:flex">
+        {/* Desktop: center menu */}
+        <div className="hidden flex-1 items-center justify-center gap-10 md:flex">
           <Link
             href="/about"
             className="font-sans text-[15px] font-extralight text-[#1a1a1a] tracking-[0.02em] hover:text-[#FF6B35]"
@@ -42,23 +42,9 @@ export default function Nav() {
             Events
           </Link>
         </div>
-        <div className="hidden md:block">
-          <Link
-            href="/apply"
-            className="inline-flex items-center rounded-[100px] border-none bg-[#FF6B35] px-6 py-3 font-sans text-[14px] font-light tracking-[0.1em] text-white transition-all duration-300 hover:bg-[#e85a25] hover:scale-[1.02]"
-          >
-            参加する <span aria-hidden>→</span>
-          </Link>
-        </div>
 
         {/* Mobile: hamburger */}
-        <div className="flex items-center gap-4 md:hidden">
-          <Link
-            href="/apply"
-            className="rounded-[100px] bg-[#FF6B35] px-4 py-2.5 font-sans text-[13px] font-light tracking-[0.1em] text-white"
-          >
-            参加する →
-          </Link>
+        <div className="flex items-center justify-end md:hidden">
           <button
             type="button"
             aria-label="メニューを開く"

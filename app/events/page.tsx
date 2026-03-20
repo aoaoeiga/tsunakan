@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -12,7 +11,6 @@ const events = [
     place: "京都市内",
     fee: "¥2,000",
     status: "終了" as const,
-    cta: null,
   },
   {
     id: "vol02",
@@ -22,7 +20,6 @@ const events = [
     capacity: "6名限定",
     fee: "¥2,000",
     status: "受付中" as const,
-    cta: true,
   },
 ];
 
@@ -92,16 +89,6 @@ export default function EventsPage() {
                   <dd>{event.fee}</dd>
                 </div>
               </dl>
-              {event.cta && (
-                <div className="mt-6">
-                  <Link
-                    href="/apply"
-                    className="inline-flex items-center justify-center rounded-[100px] border-none bg-[#FF6B35] px-[52px] py-[18px] font-sans text-[16px] font-light tracking-[0.1em] text-white transition-all duration-300 hover:bg-[#e85a25] hover:scale-[1.02]"
-                  >
-                    参加を申し込む <span aria-hidden>→</span>
-                  </Link>
-                </div>
-              )}
             </motion.div>
           ))}
         </div>

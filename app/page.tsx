@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function HomePage() {
@@ -42,24 +41,10 @@ export default function HomePage() {
             hidden: { opacity: 0, y: 20 },
             show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
           }}
-          className="mx-auto mb-12 font-sans text-[16px] font-extralight leading-relaxed text-[#999]"
+          className="mx-auto font-sans text-[16px] font-extralight leading-relaxed text-[#999]"
         >
           繋がって、感動して、乾杯。
         </motion.p>
-
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-          }}
-        >
-          <Link
-            href="/apply"
-            className="inline-flex items-center justify-center rounded-[100px] border-none bg-[#FF6B35] px-[52px] py-[18px] font-sans text-[16px] font-light tracking-[0.1em] text-white transition-all duration-300 hover:bg-[#e85a25] hover:scale-[1.02]"
-          >
-            参加を申し込む <span aria-hidden>→</span>
-          </Link>
-        </motion.div>
       </motion.div>
     </section>
   );
