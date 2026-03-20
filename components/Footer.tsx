@@ -8,7 +8,7 @@ export default function Footer() {
           href="/"
           className="font-serif text-2xl font-light text-[#1a1a1a] tracking-[0.02em]"
         >
-          ツナカン.
+          ツナカン
         </Link>
         <p className="mt-4 font-sans text-[14px] font-extralight text-[#999] tracking-[0.02em]">
           繋がって、感動して、乾杯。

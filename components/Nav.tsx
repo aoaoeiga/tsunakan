@@ -24,7 +24,7 @@ export default function Nav() {
           href="/"
           className="font-serif text-xl font-light text-[#1a1a1a] tracking-[0.02em]"
         >
-          ツナカン.
+          ツナカン
         </Link>
 
         {/* Desktop: center menu */}
